@@ -4,13 +4,14 @@
 #include <string>
 
 
-enum class PklType {
-	Boolean,
+enum class PklType
+{
 	Number,
+	Boolean,
 	String,
 	Duration,
 	DataSize,
-	Dynamic,
+	Object,
 	Listing,
 	Mapping,
 	Class,
@@ -19,7 +20,8 @@ enum class PklType {
 	Null,
 };
 
-enum class Number {
+enum class Number
+{
 	Int, // 64-bit
 	Float, // 64-bit
 	NaN,
@@ -27,10 +29,16 @@ enum class Number {
 	NegInfinity,
 };
 
-struct PklValue {
+struct PklValue
+{
 	PklType type;
-	std::variant<bool, std::variant<int, float>, std::string> value;
+	std::variant<bool, std::variant<long, double>, std::string> value;
 
 	PklValue(bool val) : type(PklType::Boolean), value(val) {}
-	PklValue(int val) : type(PklType::Number), value(val) {}
+	PklValue(std::variant<long, double> val) : type(PklType::Number), value(val) {}
+	//PklValue()
+
+	//PklValue(double val) : type(PklType::Number), value(val) {}
 };
+
+

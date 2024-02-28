@@ -2,12 +2,21 @@
 // GitHub: https://github.com/apple/pkl
 // Language Reference: https://pkl-lang.org/main/current/language-reference/index.html
 
+// Parsing pipeline:
+//  1. Tokenizer (lexical analysis, regular expressions)
+//    -> Tokens
+//  2. Parser (systantic analysis, Backus-Naur form, Recursive-descent)
+//    -> Abstract Syntax Tree (AST)
+//  3. 
+
+
 #include <iostream>
 #include <fstream>
+#include <string>
 
 int main()
 {
-	std::ifstream file("C:\\Users\\elias.hakanssonwenn\\Desktop\\coding\\PklParserCpp\\bird.pkl");
+	std::ifstream file("../bird.pkl");
 	
 	if (!file.is_open()) {
 		std::cout << "Unable to open file" << std::endl;
@@ -21,7 +30,6 @@ int main()
 	}
 
 	file.close();
-
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
