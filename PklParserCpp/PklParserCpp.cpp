@@ -1,9 +1,9 @@
 // Website: https://pkl-lang.org/
 // GitHub: https://github.com/apple/pkl
+// Language Reference: https://pkl-lang.org/main/current/language-reference/index.html
 
 #include <iostream>
 #include <fstream>
-#include <string>
 
 int main()
 {
